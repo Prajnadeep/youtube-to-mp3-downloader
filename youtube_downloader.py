@@ -6,7 +6,6 @@ import os
 from os import system
 import platform
 import time
-import shutil
 
 # Prajnadeep
 
@@ -57,14 +56,8 @@ def checkURL(url):
 
 
 def downloadSong(url):
-    #os.chdir('./Youtube_downloads/')
     with youtube_dl.YoutubeDL(ydl_opts) as ydl:
         ydl.download([url])
-    #for file in os.listdir("./"):
-    #    if file.endswith(".mp3"):
-    #        os.rename(file, song_title + ".mp3")
-    #os.chdir('./Youtube_downloads/')
-    #shutil.move("./*.mp3", "./Youtube_downloads/")
     system('clear') if platform.system() == 'Linux' else system('cls')  # CLEAR SCREEN
     print("Downloaded " + song_title)
     print('')
@@ -83,7 +76,6 @@ def searchAgain():
 
 
 def main():
-    #os.makedirs(os.path.join('Youtube_downloads'), exist_ok=True)
     system('clear') if platform.system() == 'Linux' else system('cls')  # CLEAR SCREEN
     print("======== Youtube to MP3 Downloader =========")
     print('')
