@@ -1,11 +1,9 @@
-import youtube_dl
 from requests import get
 import validators
-from youtube_dl import YoutubeDL
-import os
 from os import system
 import platform
 import time
+from yt_dlp import YoutubeDL
 
 # Prajnadeep
 
@@ -20,6 +18,7 @@ ydl_opts = {
         'preferredquality': '192',
     }],
     'noplaylist': True,
+    'extractor_retries': 'auto',
     'flatplaylist': True,
     'nocheckcertificate': True,
     'source_address': '0.0.0.0',
